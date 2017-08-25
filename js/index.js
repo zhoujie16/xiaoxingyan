@@ -40,7 +40,7 @@ var app = new Vue({
     },
     watch: {
         nowTime: function() {
-            var date1 = '2017/05/17 09:41:00'; //开始时间  
+            var date1 = '2015/07/15 00:00:00'; //开始时间  
             var date2 = new Date(this.nowTime); //结束时间  
             var date3 = date2.getTime() - new Date(date1).getTime(); //时间差的毫秒数        
 
@@ -85,7 +85,7 @@ var app = new Vue({
     },
     methods: {
         bodyClickAction: function() {
-            //zjLog('点击body');
+            zjLog('点击body');
             this.indexItem++;
             if(this.indexItem === 6) {
                 this.indexItem = 0;
@@ -93,7 +93,7 @@ var app = new Vue({
         },
         nameClick: function(index) {
             var self = this;
-            //zjLog('点击头像' + index);
+            zjLog('点击头像' + index);
             if(index === 1) {
                 self.animateBoy = true;
                 setTimeout(function() {
@@ -114,6 +114,6 @@ var app = new Vue({
         setInterval(function() {
             self.nowTime = new Date();
         }, 500);
-        //zjLog('打开页面');
+        zjLog('打开页面');
     }
 });
