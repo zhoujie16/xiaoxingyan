@@ -20,7 +20,7 @@ var app = new Vue({
         indexItem: 0,
         dateString: '',
         //
-        startTime: 1494985260000,
+        startTime: 1436889600000,
         nowTime: 0,
         days: 0,
         hours: 0,
