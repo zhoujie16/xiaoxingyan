@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <!--<script src="js/zjlog.min.js" type="text/javascript" charset="utf-8"></script>-->
+    <script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body> 
+    <div id="app">
+        <div class="bg-warp">
+        		<!-- slideInRight slideOutLeft fadeIn fadeOut-->
+            <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
+                <div class="bg0" v-if="indexItem===0" key="msg0">
+
+                </div>
+                <div class="bg1" v-else-if="indexItem===1" key="msg1">
+
+                </div>
+                <div class="bg2" v-else-if="indexItem===2" key="msg2">
+
+                </div>
+                <div class="bg3" v-else-if="indexItem===3" key="msg3">
+
+                </div>
+                <div class="bg4" v-else-if="indexItem===4" key="msg4">
+
+                </div>
+                <div class="bg5" v-else-if="indexItem===5" key="msg5">
+
+                </div>
+            </transition>
+        </div>
+        <div class="header">
+            <div @tap="nameClick(1)" class="m-info my-info" :class="{animated:animateBoy,rubberBand:animateBoy}">
+                <img src="assets/icon1.png" />
+                <div class="name">
+                    <div>小星岩的盖世英雄</div>
+                    <div>
+                        <span class="sex boy"> ♂</span>
+                    </div>
+                </div>
+            </div>
+            <div @tap="nameClick(2)" class="m-info you-info" :class="{animated:animateGirl,rubberBand:animateGirl}">
+                <div class="name">
+                    <div>小星岩</div>
+                    <div>
+                        <span class="sex girl">♀ </span> 
+                    </div>
+                </div>
+                <img src="assets/icon2.png" />
+            </div>
+        </div>
+        <div @tap="bodyClickAction" class="body">
+            <transition mode="out-in" enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
+                <div class="message" v-if="indexItem===0" key="msg0">
+                    <div class="text">
+                        你好，小星岩的盖世英雄
+                        <br />我们认识好久啦
+                    </div>
+                </div>
+                <div class="message" v-else-if="indexItem===1" key="msg11">
+                    <div class="title">
+                        我们认识好久啦
+                    </div>
+                    <div class="days">
+                        <span>{{days}}</span>
+                        <span class="small">天</span>
+                    </div>
+                    <div class="date">
+                        {{dateString}}
+                    </div>
+                </div>
+                <div class="message" v-else-if="indexItem===2" key="msg22">
+                    <div class="title">
+                        我们认识好久啦
+                    </div>
+                    <div class="days">
+                        <span>{{hours_all}}</span>
+                        <span class="small">时</span>
+                    </div>
+                    <div class="date">
+                        {{dateString}}
+                    </div>
+                </div>
+                <div class="message" v-else-if="indexItem===3" key="msg33">
+                    <div class="title">
+                        我们认识好久啦
+                    </div>
+                    <div class="days">
+                        <span>{{minutes_all}}</span>
+                        <span class="small">分</span>
+                    </div>
+                    <div class="date">
+                        {{dateString}}
+                    </div>
+                </div>
+                <div class="message" v-else-if="indexItem===4" key="msg44">
+                    <div class="title">
+                        我们认识好久啦
+                    </div>
+                    <div class="days">
+                        <span>{{seconds_all}}</span>
+                        <span class="small">秒</span>
+                    </div>
+                    <div class="date">
+                        {{dateString}}
+                    </div>
+                </div>
+                <div class="message" v-else-if="indexItem===5" key="msg55">
+                    <div class="text">
+                        多谢你如此精彩耀眼
+                        <br /> 做我平淡岁月里的星辰
+                    </div>
+                </div>
+            </transition>
+        </div>
+    </div>
+    <script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>
